@@ -90,7 +90,7 @@ export class Auth<User = unknown> {
     if (!inject || !event.url.pathname.startsWith('/auth')) {
       return;
     }
-    if (event.locals?.user) {
+    if ((event.locals as any).user) {
       throw redirect(307, this.#options.successRedirect ?? '/');
     }
     const params = event.url.pathname.split('/');
