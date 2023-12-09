@@ -1,5 +1,11 @@
 # 0.1.0 (2023-12-06)
 
+## 1.0.0
+
+### Major Changes
+
+- [#1](https://github.com/willin/svelte-turbo/pull/1) [`2003948`](https://github.com/willin/svelte-turbo/commit/2003948cde7de474f0da4c2f5132ed26afe05210) Thanks [@willin](https://github.com/willin)! - The first major version
+
 ### Features
 
 - :tada: cookie strategy ([c8759bc](https://github.com/willin/svelte-session/commit/c8759bca6f4bee0d11a52f9f159bd9ccfa485b08))
