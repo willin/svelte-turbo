@@ -21,6 +21,8 @@ declare global {
     // interface PageData {}
     interface Platform {
       env: {
+        GITHUB_ID: string;
+        GITHUB_SECRET: string;
         SSO_ID: string;
         SSO_SECRET: string;
       };

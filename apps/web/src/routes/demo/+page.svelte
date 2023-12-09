@@ -17,7 +17,7 @@
 {/if}
 
 {#if data && data.user}
-  <div>
+  <div style="max-width: 600px;word-break: break-all; word-wrap: break-word; overflow-x:auto;">
     <pre>{JSON.stringify(data.user, null, 2)}</pre>
   </div>
 {/if}

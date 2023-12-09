@@ -2,7 +2,7 @@
 import createDebug from 'debug';
 import {
   AuthorizationError,
-  type AuthOptions,
+  type AuthenticateOptions,
   type SessionStorage,
   Strategy,
   type StrategyVerifyCallback
@@ -135,7 +135,7 @@ export class OAuth2Strategy<
     this.useBasicAuthenticationHeader = options.useBasicAuthenticationHeader ?? false;
   }
 
-  async authenticate(event: RequestEvent, options: AuthOptions): Promise<User | void> {
+  async authenticate(event: RequestEvent, options: AuthenticateOptions): Promise<User | void> {
     const { request } = event;
     const session = (event.locals as any).session as SessionStorage;
     debug('Request URL', request.url);
