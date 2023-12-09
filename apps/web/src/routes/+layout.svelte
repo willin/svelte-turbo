@@ -3,8 +3,8 @@
   <nav>
     <a href="/">Demo</a> |
     <a href="https://github.com/willin/svelte-turbo" target="_blank">Repo</a> |
-    <a href="/docs/" target="_blank">Auth</a> |
-    <a href="/docs/" target="_blank">Session</a>
+    <a href="/docs/auth" target="_blank">Auth</a> |
+    <a href="/docs/session" target="_blank">Session</a>
   </nav>
   <article>
     <h2>Demo</h2>

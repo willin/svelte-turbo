@@ -1,0 +1,17 @@
+{
+  "extends": ["./tsconfig.json", "typedoc/tsdoc.json"],
+  "include": [
+    "./.svelte-kit/ambient.d.ts",
+    "./.svelte-kit/types/**/$types.d.ts",
+    "./types/**/*.ts",
+    "./vite.config.ts",
+    "./src/**/*.ts",
+    "./src/**/*.svelte",
+    "./tests/**/*.js",
+    "./tests/**/*.ts",
+    "./tests/**/*.svelte",
+    "./dist/**/*.ts",
+    "./dist/**/*.svelte"
+  ],
+  "exclude": ["**/*.test.ts", "**/*.js"]
+}
