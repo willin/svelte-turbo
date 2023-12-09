@@ -41,55 +41,54 @@ Here's an simple Example:
 // hooks.server.ts
 import { env } from '$env/dynamic/private';
 import { sequence } from '@sveltejs/kit/hooks';
-import { handleSession } from '@svelte-dev/session';
-import { Auth } from '@svelte-dev/auth';
+import { handleAuth } from '@svelte-dev/auth';
 import { OAuth2Strategy } from '@svelte-dev/auth-oauth2';
 
-export const handle = sequence(
-  handleSession({
-    adapter: {
-      name: 'cookie',
-      options: {
-        chunk: true
-      }
-    },
-    session: {
-      secrets: ['s3cr3t']
-    },
-    cookie: {
-      secure: !!env.SSO_CALLBACK_URL,
-      sameSite: 'lax',
-      path: '/',
-      httpOnly: !!env.SSO_CALLBACK_URL
-    }
-  }),
-  async function handle({ event, resolve }) {
-    const auth = new Auth(event);
-    const oauthStrategy = new OAuth2Strategy(
-      {
-        clientID: env.SSO_ID,
-        clientSecret: env.SSO_SECRET,
-        callbackURL: env.SSO_CALLBACK_URL || 'http://localhost:8788/auth/sso/callback'
-      },
-      async ({ profile }) => {
-        // Get the user data from your DB or API using the tokens and profile
-        return profile;
-      }
-    );
-    auth.use(oauthStrategy);
-    event.locals.auth = auth;
-    event.locals.user = event.locals.session.get(
-      // replace your session key, AuthOptions.sessionKey
-      'user'
-    );
-    const response = await resolve(event);
-
-    return response;
+const oauthStrategy = new OAuth2Strategy(
+  {
+    clientID: env.SSO_ID,
+    clientSecret: env.SSO_SECRET,
+    callbackURL: env.SSO_CALLBACK_URL || 'http://localhost:8788/auth/oauth2/callback'
+  },
+  async ({ profile }) => {
+    // Get the user data from your DB or API using the tokens and profile
+    return profile;
   }
 );
+
+export const handle = handleAuth({
+  // Auth Options
+  autoRouting: true,
+  strategies: [oauthStrategy],
+  sessionKey: 'user',
+  sessionErrorKey: 'auth:error',
+  sessionStrategyKey: 'strategy',
+  successRedirect: '/',
+  failureRedirect: '/',
+  // Session Storage Options
+  adapter: {
+    name: 'cookie',
+    options: {
+      chunk: true
+    }
+  },
+  session: {
+    secrets: ['s3cr3t']
+  },
+  cookie: {
+    secure: !!env.SSO_CALLBACK_URL,
+    sameSite: 'lax',
+    path: '/',
+    httpOnly: !!env.SSO_CALLBACK_URL
+  }
+});
 ```
 
-Then, add a login handler `src/routes/auth/[provider]/+server.ts`:
+That's it.
+
+## Advanced Usage
+
+If you did not set `authRouting`. You need to add a login handler `src/routes/auth/[provider]/+server.ts`:
 
 ```ts
 import { redirect, type RequestEvent } from '@sveltejs/kit';
@@ -104,7 +103,7 @@ export const GET = async (event: RequestEvent) => {
 };
 ```
 
-Finally, add a callback handler `src/routes/auth/[provider]/callback/+server.ts.ts`:
+Then, add a callback handler `src/routes/auth/[provider]/callback/+server.ts.ts`:
 
 ```ts
 // same as before...
@@ -119,8 +118,6 @@ export const GET = async (event: RequestEvent) => {
   });
 };
 ```
-
-## Advanced Usage
 
 ### Typescript
 

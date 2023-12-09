@@ -1,7 +1,7 @@
 import type { SessionStorage } from '@svelte-dev/session';
 import { json, redirect, type RequestEvent } from '@sveltejs/kit';
 import { AuthorizationError } from './error.js';
-import type { AuthOptions } from './types.js';
+import type { AuthenticateOptions, AuthOptions } from './types.js';
 
 /**
  * A function which will be called to find the user using the information the
@@ -36,6 +36,8 @@ export abstract class Strategy<User, VerifyOptions> {
    */
   public abstract name: string;
 
+  protected authOptions: AuthOptions = {};
+
   public constructor(protected verify: StrategyVerifyCallback<User, VerifyOptions>) {}
 
   /**
@@ -47,7 +49,7 @@ export abstract class Strategy<User, VerifyOptions> {
    * At the end of the flow, it will return a Response to be used by the
    * application.
    */
-  public abstract authenticate(event: RequestEvent, options: AuthOptions): Promise<User>;
+  public abstract authenticate(event: RequestEvent, options: AuthenticateOptions): Promise<User>;
 
   /**
    * Throw an AuthorizationError or a redirect to the failureRedirect.
@@ -61,9 +63,13 @@ export abstract class Strategy<User, VerifyOptions> {
   protected async failure(
     message: string,
     event: RequestEvent,
-    options: AuthOptions,
+    opts: AuthenticateOptions,
     cause?: Error
   ): Promise<void> {
+    const options = {
+      ...this.authOptions,
+      ...opts
+    };
     // if a failureRedirect is not set, we throw a 401 Response or an error
     if (!options.failureRedirect) {
       if (options.throwOnError) throw new AuthorizationError(message, cause);
@@ -87,12 +93,24 @@ export abstract class Strategy<User, VerifyOptions> {
    * @returns {Promise<User>} The user data.
    * @throws {Response} If the successRedirect is set, it will redirect to it.
    */
-  protected async success(user: User, event: RequestEvent, options: AuthOptions): Promise<User> {
+  protected async success(
+    user: User,
+    event: RequestEvent,
+    opts: AuthenticateOptions
+  ): Promise<User> {
+    const options = {
+      ...this.authOptions,
+      ...opts
+    };
     // if a successRedirect is not set, we return the user
     if (!options.successRedirect) return user;
     const session = (event.locals as any).session as SessionStorage;
     await session.set(options?.sessionKey ?? 'user', user);
     await session.set('strategy', this.name);
     throw redirect(307, options.successRedirect);
+  }
+
+  public setAuthOptions(options: AuthOptions): void {
+    this.authOptions = options;
   }
 }

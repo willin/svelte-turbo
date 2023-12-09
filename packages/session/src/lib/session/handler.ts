@@ -2,6 +2,11 @@ import type { Handle } from '@sveltejs/kit';
 import type { SessionStorageOptions } from './types.js';
 import { SessionStorage } from './storage.js';
 
+/**
+ * Handler for the session storage.
+ * @example
+ * const handle = handleSession({ adapter: {}, cookie: {}, session: {}});
+ */
 export function handleSession(
   options: SessionStorageOptions,
   passedHandle: Handle = async ({ event, resolve }) => resolve(event)
