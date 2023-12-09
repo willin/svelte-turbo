@@ -1,0 +1,4 @@
+{
+  "conventionalCommits.scopes": ["auth", "session", "strategies"],
+  "cSpell.words": ["willin"]
+}

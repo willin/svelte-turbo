@@ -1,0 +1,31 @@
+{
+  "name": "@svelte-dev/eslint-config",
+  "version": "0.0.0",
+  "description": "Eslint for TypeScript",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willin/svelte-turbo.git"
+  },
+  "keywords": [
+    "ESLint",
+    "TypeScript",
+    "Willin"
+  ],
+  "author": "Willin Wang",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/willin/svelte-turbo/issues"
+  },
+  "homepage": "https://svelte.js.cool",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-turbo": "^1.10.16",
+    "eslint-plugin-svelte": "^2.35.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
