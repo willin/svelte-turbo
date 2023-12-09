@@ -1,6 +1,6 @@
 {
   "name": "@svelte-dev/auth-github",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Github Strategy for Svelte Auth",
   "author": "Willin Wang <willin@willin.org> (https://willin.wang/)",
   "keywords": [

@@ -1,5 +1,16 @@
 # 0.1.0 (2023-12-06)
 
+## 2.0.0
+
+### Minor Changes
+
+- [#5](https://github.com/willin/svelte-turbo/pull/5) [`2fe58d3`](https://github.com/willin/svelte-turbo/commit/2fe58d3230de76ab70d4cd7119ceaea4b065f39e) Thanks [@willin](https://github.com/willin)! - feat: :tada: add auth handler
+
+### Patch Changes
+
+- Updated dependencies [[`2fe58d3`](https://github.com/willin/svelte-turbo/commit/2fe58d3230de76ab70d4cd7119ceaea4b065f39e)]:
+  - @svelte-dev/session@1.1.0
+
 ## 1.0.0
 
 ### Major Changes
