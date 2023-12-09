@@ -1,6 +1,6 @@
 {
   "name": "@svelte-dev/eslint-config",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Eslint for TypeScript",
   "main": "index.js",
   "repository": {
