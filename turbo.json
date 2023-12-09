@@ -7,8 +7,8 @@
       "outputs": [".svelte-kit/**", "dist/**"]
     },
     "build:docs": {
-      "dependsOn": ["^build"],
-      "outputs": [".svelte-kit/**", "dist/**"]
+      "dependsOn": ["build"],
+      "outputs": ["static/docs/**"]
     },
     "test": {
       "outputs": ["coverage/**"],
