@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
+    "build:docs": "turbo run build:docs",
     "dev": "turbo run dev",
     "test": "turbo run test",
     "changeset:version": "changeset version",
