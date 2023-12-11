@@ -11,6 +11,7 @@
   "navigationLinks": {
     "Home": "https://svelte.js.cool/",
     "Auth": "https://svelte.js.cool/docs/auth",
+    "Session": "https://svelte.js.cool/docs/session",
     "GitHub": "https://github.com/willin/svelte-turbo",
     "NPM": "https://npmjs.com/package/@svelte-dev/session",
     "Willin": "https://willin.wang"

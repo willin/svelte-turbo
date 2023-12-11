@@ -10,6 +10,7 @@
   "hideParameterTypesInTitle": false,
   "navigationLinks": {
     "Home": "https://svelte.js.cool/",
+    "I18n": "https://svelte.js.cool/docs/i18n",
     "Session": "https://svelte.js.cool/docs/session",
     "GitHub": "https://github.com/willin/svelte-turbo",
     "NPM": "https://npmjs.com/package/@svelte-dev/auth",
