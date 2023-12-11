@@ -37,6 +37,7 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
+      "main": "./dist/index.js",
       "svelte": "./dist/index.js"
     }
   },
@@ -72,6 +73,7 @@
     "vitest": "^0.34.0"
   },
   "svelte": "./dist/index.js",
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module"
 }
