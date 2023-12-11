@@ -8,7 +8,7 @@
     },
     "build:docs": {
       "dependsOn": ["build"],
-      "outputs": ["static/docs/**"]
+      "outputs": [".svelte-kit/cloudflare/docs/**"]
     },
     "test": {
       "outputs": ["coverage/**"],

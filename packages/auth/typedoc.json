@@ -1,7 +1,7 @@
 {
   "$schema": "https://typedoc.org/schema.json",
   "entryPoints": ["./dist/index.d.ts"],
-  "out": "../../apps/web/static/docs/auth",
+  "out": "../../apps/web/.svelte-kit/cloudflare/docs/auth",
   "tsconfig": "tsconfig.typedoc.json",
   "externalPattern": ["**/node_modules/[!svelte]**"],
   "exclude": ["**/*+(index|.test|.spec|.e2e).ts"],
