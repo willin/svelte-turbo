@@ -1,10 +1,11 @@
 import dlv from 'dlv';
 import templite from 'templite';
-import { derived } from 'svelte/store';
+import { derived, type Readable } from 'svelte/store';
 import { $dictionary, getMessageFromDictionary } from './dictionary.js';
 import { $locale, getCurrentLocale } from './locale.js';
+import type { MessageFormatter } from './types.js';
 
-const formatMessage = (key: string, params?: any, lang?: string): string => {
+const formatMessage: MessageFormatter = (key: string, params?: any, lang?: string): string => {
   const dict = getMessageFromDictionary(lang || (getCurrentLocale() as string));
   const val = dlv(dict as any, key, key);
   if (typeof val === 'function') return val(params) as string;
@@ -14,4 +15,4 @@ const formatMessage = (key: string, params?: any, lang?: string): string => {
   return val as string;
 };
 
-export const $t = derived([$locale, $dictionary], () => formatMessage);
+export const $t: Readable<MessageFormatter> = derived([$locale, $dictionary], () => formatMessage);
