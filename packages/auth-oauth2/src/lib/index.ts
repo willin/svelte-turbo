@@ -3,12 +3,12 @@ import createDebug from 'debug';
 import {
   AuthorizationError,
   type AuthenticateOptions,
-  type SessionStorage,
   Strategy,
   type StrategyVerifyCallback
 } from '@svelte-dev/auth';
 import { redirect, type RequestEvent } from '@sveltejs/kit';
 import { customAlphabet } from 'nanoid';
+import type { SessionStorage } from '@svelte-dev/session';
 
 export const nanoid = customAlphabet('1234567890abcdef', 20);
 

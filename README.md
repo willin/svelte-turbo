@@ -12,6 +12,7 @@ Read the documentation to get started with [@svelte-dev/session](packages/sessio
 | [@svelte-dev/auth](packages/auth/)               | [Docs](https://svelte.js.cool/docs/auth/)    | [Changelog](packages/auth/CHANGELOG.md)        |
 | [@svelte-dev/auth-oauth2](packages/auth-oauth2/) |                                              | [Changelog](packages/auth-oauth2/CHANGELOG.md) |
 | [@svelte-dev/auth-github](packages/auth-github/) |                                              | [Changelog](packages/auth-github/CHANGELOG.md) |
+| [@svelte-dev/auth-alipay](packages/auth-alipay/) |                                              | [Changelog](packages/auth-alipay/CHANGELOG.md) |
 | [@svelte-dev/auth-afdian](packages/auth-afdian/) |                                              | [Changelog](packages/auth-afdian/CHANGELOG.md) |
 | [@svelte-dev/auth-sso](packages/auth-sso/)       |                                              | [Changelog](packages/auth-sso/CHANGELOG.md)    |
 
