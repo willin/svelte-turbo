@@ -79,7 +79,7 @@ export class AlipayStrategy<
     {
       appId,
       privateKey,
-      callbackURL,
+      callbackURL = '/auth/alipay/callback',
       signType = AlipayStrategyDefaultSignType,
       scope,
       userAgent,
