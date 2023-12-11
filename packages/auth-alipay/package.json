@@ -1,14 +1,18 @@
 {
-  "name": "@svelte-dev/auth-oauth2",
-  "version": "1.0.1",
-  "description": "A OAuth2Strategy for @svelte-dev/auth",
+  "name": "@svelte-dev/auth-alipay",
+  "version": "0.0.0",
+  "description": "Alipay Strategy for Svelte Auth",
   "author": "Willin Wang <willin@willin.org> (https://willin.wang/)",
   "keywords": [
     "svelte",
-    "svelte-auth",
     "auth",
     "authentication",
-    "strategy"
+    "local",
+    "auth0",
+    "authing",
+    "oauth2",
+    "alipay",
+    "strategies"
   ],
   "repository": {
     "type": "git",
@@ -46,20 +50,16 @@
     "!dist/**/*.spec.*"
   ],
   "dependencies": {
+    "dayjs": "^1.11.10",
     "debug": "^4.3.4",
     "nanoid": "^5.0.4"
   },
   "peerDependencies": {
     "@svelte-dev/auth": "*"
   },
-  "optionalDependencies": {
-    "@svelte-dev/session": "*"
-  },
   "devDependencies": {
     "@svelte-dev/eslint-config": "*",
     "@sveltejs/adapter-auto": "^2.0.0",
-    "@svelte-dev/auth": "*",
-    "@svelte-dev/session": "*",
     "@sveltejs/kit": "^1.27.4",
     "@sveltejs/package": "^2.0.0",
     "eslint": "^8.28.0",

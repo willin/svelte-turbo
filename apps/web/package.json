@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "vite dev --port 8788",
+    "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -16,7 +16,8 @@
     "@svelte-dev/session": "*",
     "@svelte-dev/auth": "*",
     "@svelte-dev/auth-github": "*",
-    "@svelte-dev/auth-sso": "*"
+    "@svelte-dev/auth-sso": "*",
+    "@svelte-dev/auth-alipay": "*"
   },
   "devDependencies": {
     "@sveltejs/adapter-cloudflare": "^2.3.3",
