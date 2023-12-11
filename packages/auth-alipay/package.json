@@ -1,6 +1,6 @@
 {
   "name": "@svelte-dev/auth-alipay",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Alipay Strategy for Svelte Auth",
   "author": "Willin Wang <willin@willin.org> (https://willin.wang/)",
   "keywords": [
