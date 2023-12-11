@@ -1,6 +1,9 @@
 import { env } from '$env/dynamic/private';
+import { fallbackLng } from '$lib/i8n';
 import { handleAuth } from '@svelte-dev/auth';
 import { GitHubStrategy } from '@svelte-dev/auth-github';
+import { locale } from '@svelte-dev/i18n';
+
 // import { SSOStrategy } from '@svelte-dev/auth-sso';
 // import { AlipayStrategy } from '@svelte-dev/auth-alipay';
 
@@ -41,29 +44,40 @@ const githubStrategy = new GitHubStrategy(
   }
 );
 
-export const handle = handleAuth({
-  adapter: {
-    name: 'cookie',
-    options: {
-      chunk: true
-    }
+export const handle = handleAuth(
+  {
+    adapter: {
+      name: 'cookie',
+      options: {
+        chunk: true
+      }
+    },
+    session: {
+      secrets: ['s3cr3t']
+    },
+    cookie: {
+      secure: !!env.SSO_CALLBACK_URL,
+      sameSite: 'lax',
+      path: '/',
+      httpOnly: !!env.SSO_CALLBACK_URL,
+      maxAge: 604800000
+    },
+    autoRouting: true,
+    strategies: [
+      // alipayStrategy,
+      // ssoStrategy,
+      githubStrategy
+    ],
+    successRedirect: '/demo',
+    failureRedirect: '/error'
   },
-  session: {
-    secrets: ['s3cr3t']
-  },
-  cookie: {
-    secure: !!env.SSO_CALLBACK_URL,
-    sameSite: 'lax',
-    path: '/',
-    httpOnly: !!env.SSO_CALLBACK_URL,
-    maxAge: 604800000
-  },
-  autoRouting: true,
-  strategies: [
-    // alipayStrategy,
-    // ssoStrategy,
-    githubStrategy
-  ],
-  successRedirect: '/demo',
-  failureRedirect: '/error'
-});
+  ({ event, resolve }) => {
+    const lang = event.params.lang ?? fallbackLng;
+    event.locals.lang = lang;
+    locale.set(lang);
+
+    return resolve(event, {
+      transformPageChunk: ({ html }) => html.replace('%lang%', lang)
+    });
+  }
+);
