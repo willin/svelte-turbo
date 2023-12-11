@@ -4,10 +4,12 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
+      "cache": true,
       "outputs": [".svelte-kit/**", "dist/**"]
     },
     "build:docs": {
       "dependsOn": ["build"],
+      "cache": true,
       "outputs": [".svelte-kit/cloudflare/docs/**"]
     },
     "test": {
@@ -19,7 +21,7 @@
     "lint": {},
     "dev": {
       "dependsOn": ["build"],
-      "cache": false,
+      "cache": true,
       "persistent": true
     }
   }
