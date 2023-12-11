@@ -1,5 +1,11 @@
 # @svelte-dev/auth-alipay
 
+## 1.0.0
+
+### Major Changes
+
+- [`2e3cbad`](https://github.com/willin/svelte-turbo/commit/2e3cbad2ec05f78d85ac721b4252c9a43d93f83a) Thanks [@willin](https://github.com/willin)! - Bump to major version
+
 ## 0.0.1
 
 ### Patch Changes
