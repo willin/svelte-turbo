@@ -10,6 +10,7 @@ Read the documentation to get started with [@svelte-dev/session](packages/sessio
 | ------------------------------------------------ | -------------------------------------------- | ---------------------------------------------- |
 | [@svelte-dev/session](packages/session/)         | [Docs](https://svelte.js.cool/docs/session/) | [Changelog](packages/session/CHANGELOG.md)     |
 | [@svelte-dev/auth](packages/auth/)               | [Docs](https://svelte.js.cool/docs/auth/)    | [Changelog](packages/auth/CHANGELOG.md)        |
+| [@svelte-dev/i18n](packages/i18n/)               | [Docs](https://svelte.js.cool/docs/i18n/)    | [Changelog](packages/i18n/CHANGELOG.md)        |
 | [@svelte-dev/auth-oauth2](packages/auth-oauth2/) |                                              | [Changelog](packages/auth-oauth2/CHANGELOG.md) |
 | [@svelte-dev/auth-github](packages/auth-github/) |                                              | [Changelog](packages/auth-github/CHANGELOG.md) |
 | [@svelte-dev/auth-alipay](packages/auth-alipay/) |                                              | [Changelog](packages/auth-alipay/CHANGELOG.md) |

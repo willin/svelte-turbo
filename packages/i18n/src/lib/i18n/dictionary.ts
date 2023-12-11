@@ -1,6 +1,6 @@
 import deepmerge from 'deepmerge';
 import { derived, writable } from 'svelte/store';
-import type { I18nDict } from '../types.js';
+import type { I18nDict } from './types.js';
 import { getPossibleLocales } from './locale.js';
 
 let dictionary: I18nDict = {};
@@ -10,7 +10,7 @@ const $dictionary = writable<I18nDict>({});
  * Get Locale Dictionary from server
  */
 export function getLocaleDictionary(locale: string) {
-  return (dictionary[locale] as LocaleDictionary) || null;
+  return (dictionary[locale] as I18nDict) || null;
 }
 
 /**
@@ -63,8 +63,10 @@ export function getClosestAvailableLocale(
   return undefined;
 }
 
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 export function addMessages(locale: string, ...partials: I18nDict[]) {
   $dictionary.update((d) => {
+    // @ts-ignore
     d[locale] = deepmerge.all<I18nDict>([d[locale] || {}, ...partials]);
     return d;
   });

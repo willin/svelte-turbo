@@ -7,6 +7,7 @@
   <nav>
     <a href="/">Demo</a> |
     <a href="https://github.com/willin/svelte-turbo" target="_blank">Repo</a> |
+    <a href="/docs/i18n" target="_blank">I18n</a> |
     <a href="/docs/auth" target="_blank">Auth</a> |
     <a href="/docs/session" target="_blank">Session</a>
   </nav>
