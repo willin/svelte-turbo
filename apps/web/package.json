@@ -13,6 +13,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@svelte-dev/i18n": "*",
     "@svelte-dev/session": "*",
     "@svelte-dev/auth": "*",
     "@svelte-dev/auth-github": "*",

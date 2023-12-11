@@ -9,6 +9,7 @@ declare global {
   namespace App {
     // interface Error {}
     interface Locals {
+      lang: string;
       auth: Auth;
       session: SessionStorage<{ user: any }>;
       user?:

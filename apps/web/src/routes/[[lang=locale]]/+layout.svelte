@@ -1,3 +1,7 @@
+<script>
+  import { t } from '@svelte-dev/i18n';
+</script>
+
 <main>
   <h1>@svelte-dev/auth &amp; @svelte-dev/session</h1>
   <nav>
@@ -8,6 +12,7 @@
   </nav>
   <article>
     <h2>Demo</h2>
+    <h3>{$t('site.title')}</h3>
     <slot />
   </article>
 </main>
