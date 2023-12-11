@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "turbo run build --parallel",
+    "build": "turbo run build",
     "build:docs": "turbo run build:docs --parallel",
     "dev": "turbo run dev --parallel",
     "test": "turbo run test --parallel",
