@@ -1,6 +1,6 @@
 {
   "name": "@svelte-dev/i18n",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Internationalization library for Svelte",
   "author": "Willin Wang <willin@willin.org> (https://willin.wang/)",
   "keywords": [
