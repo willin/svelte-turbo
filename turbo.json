@@ -7,8 +7,15 @@
       "cache": true,
       "outputs": [".svelte-kit/**", "dist/**"]
     },
+    "web#build": {},
+    "@svelte-dev/auth#build": {},
+    "@svelte-dev/session#build": {},
+    "@svelte-dev/i18n#build": {},
+    "web#dev": {
+      "dependsOn": ["@svelte-dev/auth#build", "@svelte-dev/session#build", "@svelte-dev/i18n#build"]
+    },
     "build:docs": {
-      "dependsOn": ["build"],
+      "dependsOn": ["web#build"],
       "cache": true,
       "outputs": [".svelte-kit/cloudflare/docs/**"]
     },
@@ -20,7 +27,6 @@
     },
     "lint": {},
     "dev": {
-      "dependsOn": ["build"],
       "cache": true,
       "persistent": true
     }
