@@ -1,5 +1,13 @@
 # @svelte-dev/auth
 
+## 1.1.1
+
+### Patch Changes
+
+- [#12](https://github.com/willin/svelte-turbo/pull/12) [`2133928`](https://github.com/willin/svelte-turbo/commit/2133928028afdba39c8b9ae077a0fc201e39892e) Thanks [@willin](https://github.com/willin)! - auth handler with more checks
+
+- [#12](https://github.com/willin/svelte-turbo/pull/12) [`d565f53`](https://github.com/willin/svelte-turbo/commit/d565f53f8190bcb5d3197de3269037d8619342c5) Thanks [@willin](https://github.com/willin)! - chore: update readme
+
 ## 1.1.0
 
 ### Minor Changes
