@@ -3,6 +3,7 @@
   import { fallbackLng } from '$lib/i8n';
   import { getRealPath } from '$lib/utils';
   import { locale, locales } from '@svelte-dev/i18n';
+  import ChangeRepo from './ChangeRepo.svelte';
 
   const pathname = $derived(
     `${$locale === fallbackLng ? '' : `/${$locale}`}${getRealPath($page.url.pathname, $locales)}`
@@ -25,24 +26,42 @@
             stroke-width="2"
             d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </div>
-      <ul
+      <ChangeRepo
         tabindex="0"
-        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-        <!-- <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          <ul class="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li>
-        <li><a>Item 3</a></li> -->
-      </ul>
+        className="menu dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52" />
     </div>
     <a href={pathname} class="btn btn-ghost text-xl">Svelte</a>
+    <ChangeRepo />
   </div>
 
   <div class="navbar-end">
+    {#await import('./ChangeTheme.svelte')}
+      <div class="btn btn-ghost gap-1 normal-case cursor-wait">
+        <svg
+          width="20"
+          height="20"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          class="inline-block h-5 w-5 stroke-current md:h-6 md:w-6">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+        </svg>
+        <svg
+          width="12px"
+          height="12px"
+          class="ml-1 hidden h-3 w-3 fill-current opacity-60 sm:inline-block"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 2048 2048">
+          <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z" />
+        </svg>
+      </div>
+    {:then Module}
+      <Module.default />
+    {/await}
     {#await import('./ChangeLanguage.svelte')}
       <div class="btn btn-ghost gap-1 normal-case cursor-wait">
         <svg

@@ -13,12 +13,13 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@svelte-dev/i18n": "*",
-    "@svelte-dev/session": "*",
     "@svelte-dev/auth": "*",
+    "@svelte-dev/auth-alipay": "*",
     "@svelte-dev/auth-github": "*",
     "@svelte-dev/auth-sso": "*",
-    "@svelte-dev/auth-alipay": "*"
+    "@svelte-dev/i18n": "*",
+    "@svelte-dev/session": "*",
+    "theme-change": "^2.5.0"
   },
   "devDependencies": {
     "@melt-ui/pp": "^0.1.4",
