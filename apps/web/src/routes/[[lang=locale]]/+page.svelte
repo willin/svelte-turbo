@@ -4,6 +4,8 @@
   import { getPossibleLocales, locales } from '@svelte-dev/i18n';
   import { fallbackLng } from '$lib/i8n';
   import { page } from '$app/stores';
+  import SEO from '$components/SEO.svelte';
+  import { goto } from '$app/navigation';
 
   $effect(() => {
     const isInit = !!localStorage.getItem('lang');
@@ -20,6 +22,7 @@
   });
 </script>
 
+<SEO />
 <div class="hero min-h-screen" style="background-image: url(https://willin.wang/images/bg.jpg);">
   <div class="hero-overlay bg-opacity-60"></div>
   <div class="hero-content text-center text-neutral-content">

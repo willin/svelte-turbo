@@ -1,8 +1,11 @@
 <script lang="ts">
-  $effect(() => {
-    // @ts-ignore
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  });
+  import { navigating } from '$app/stores';
+  $: if ($navigating) {
+    try {
+      // @ts-ignore
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (e) {}
+  }
 </script>
 
 <ins

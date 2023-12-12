@@ -1,9 +1,10 @@
-<script>
+<script lang="ts">
   import { createTableOfContents } from '@melt-ui/svelte';
   import Toc from './toc.svelte';
   import AdSlot from './AdSlot.svelte';
+  import SEO from './SEO.svelte';
 
-  const { title, desc } = $props();
+  const { title, desc } = $props<{ title: string; desc: string }>();
 
   const {
     elements: { item },
@@ -13,6 +14,10 @@
     selector: '#article'
   });
 </script>
+
+{#if title}
+  <SEO {title} {desc} />
+{/if}
 
 <div
   class="hero min-h-screen bg-neutral"
