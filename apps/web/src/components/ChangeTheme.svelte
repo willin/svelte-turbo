@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { themes } from '$lib/themes';
   import { themeChange } from 'theme-change';
 
@@ -36,7 +36,7 @@
     class="dropdown-content bg-base-200 text-base-content rounded-t-box rounded-b-box top-px max-h-96 h-[70vh] w-60 overflow-y-auto shadow-2xl mt-16">
     <div class="grid grid-cols-1 gap-3 p-3">
       {#each themes as theme}
-        <div
+        <button
           class="outline-base-content overflow-hidden rounded-lg outline-2 outline-offset-2 hover:outline"
           data-set-theme={theme.id}
           data-act-class="[&_svg]:visible">
@@ -64,7 +64,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </button>
       {/each}
     </div>
   </div>
