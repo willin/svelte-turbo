@@ -8,10 +8,11 @@ import mdsvexConfig from './mdsvex.config.js';
 const config = {
   // Consult https://kit.svelte.dev/docs/integrations#preprocessors
   // for more information about preprocessors
-  preprocess: [mdsvex(mdsvexConfig), vitePreprocess({ postcss: true }), preprocessMeltUI()],
-  compilerOptions: {
-    runes: true
-  },
+  extensions: ['.svelte', ...mdsvexConfig.extensions],
+  preprocess: [mdsvex(mdsvexConfig), vitePreprocess(), preprocessMeltUI()],
+  // compilerOptions: {
+  //   runes: true
+  // },
   kit: {
     alias: {
       $components: './src/components'
@@ -20,6 +21,10 @@ const config = {
     // If your environment is not supported or you settled on a specific environment, switch out the adapter.
     // See https://kit.svelte.dev/docs/adapters for more information about adapters.
     adapter: adapter({
+      pages: 'build',
+      assets: 'build',
+      fallback: null,
+      precompress: true,
       routes: {
         include: ['/*'],
         exclude: ['<build>', '<prerendered>', '/favicon.png', '/ads.txt', '/images', '/docs/*']

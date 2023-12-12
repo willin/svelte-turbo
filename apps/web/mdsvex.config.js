@@ -34,11 +34,12 @@ async function highlighter(code, lang = '') {
 
 const config = defineConfig({
   extensions: ['.svelte.md', '.md', '.svx'],
-  // layout: {
-  //   blog: './path/to/blog/layout.svelte',
-  //   article: './path/to/article/layout.svelte',
-  //   _: './path/to/fallback/layout.svelte'
-  // },
+  layout: {
+    // blog: './path/to/blog/layout.svelte',
+    // article: './path/to/article/layout.svelte',
+    // _: './path/to/fallback/layout.svelte'
+    _: 'src/components/mdsvex.svelte'
+  },
   highlight: {
     highlighter
   },

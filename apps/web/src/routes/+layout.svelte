@@ -1,5 +1,5 @@
 <script>
-  import '../../app.css';
+  import '../app.css';
   import { locale, t } from '@svelte-dev/i18n';
   import Navbar from '$components/Navbar.svelte';
   import { onNavigate } from '$app/navigation';

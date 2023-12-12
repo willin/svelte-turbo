@@ -12,7 +12,7 @@
   <li aria-current={$page.url.pathname === '/en/' ? 'repo' : undefined}>
     <a href="/en">Item 2</a>
   </li>
-  <li><a>Item 3</a></li>
+  <li><a href="/session">Item 3</a></li>
 </ul>
 
 <style>
