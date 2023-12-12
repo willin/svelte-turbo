@@ -1,4 +1,5 @@
 <script>
+  import '../../app.css';
   import { t } from '@svelte-dev/i18n';
 </script>
 
