@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
   // @ts-nocheck
   import { page } from '$app/stores';
 
-  const { className, ...rest } = $props();
+  const { className, ...rest } = $props<{ className?: string; tabindex?: string }>();
 </script>
 
 <ul

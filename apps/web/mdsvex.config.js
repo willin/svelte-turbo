@@ -1,9 +1,14 @@
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { defineMDSveXConfig as defineConfig } from 'mdsvex';
 import remarkGfm from 'remark-gfm';
 import remarkGithub from 'remark-github';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { codeToHtml } from 'shikiji';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 /**
  * @param {string} code
@@ -38,7 +43,7 @@ const config = defineConfig({
     // blog: './path/to/blog/layout.svelte',
     // article: './path/to/article/layout.svelte',
     // _: './path/to/fallback/layout.svelte'
-    _: 'src/components/mdsvex.svelte'
+    _: path.resolve(__dirname, './src/components/mdsvex.svelte')
   },
   highlight: {
     highlighter
