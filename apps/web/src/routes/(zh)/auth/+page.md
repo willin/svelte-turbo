@@ -49,8 +49,6 @@ npm install @svelte-dev/auth @svelte-dev/session
 
 ## 使用
 
-API规范：[文档](https://svelte-auth.js.cool/docs/)
-
 这是一个简单的例子：
 
 ```ts
