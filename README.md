@@ -2,7 +2,7 @@
 
 [![github](https://img.shields.io/github/followers/willin.svg?style=social&label=Followers)](https://github.com/willin)
 
-Read the documentation to get started with [@svelte-dev/session](packages/session/), [@svelte-dev/auth](packages/auth/) or [@svelte-dev/i18n](packages/i18n/).
+[中文文档](https://svelte.js.cool) | [English Docs](https://svelte.js.cool/en)
 
 ### Packages
 
@@ -17,7 +17,7 @@ Read the documentation to get started with [@svelte-dev/session](packages/sessio
 | [@svelte-dev/auth-afdian](packages/auth-afdian/) | [![npm](https://img.shields.io/npm/v/@svelte-dev/auth-afdian?style=flat-square&logo=npm)](https://npmjs.org/package/@svelte-dev/auth-afdian) [![npm](https://img.shields.io/npm/dm/@svelte-dev/auth-afdian?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-afdian) [![npm](https://img.shields.io/npm/dt/@svelte-dev/auth-afdian?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-afdian) |                                              | [Changelog](packages/auth-afdian/CHANGELOG.md) |
 | [@svelte-dev/auth-sso](packages/auth-sso/)       | [![npm](https://img.shields.io/npm/v/@svelte-dev/auth-sso?style=flat-square&logo=npm)](https://npmjs.org/package/@svelte-dev/auth-sso) [![npm](https://img.shields.io/npm/dm/@svelte-dev/auth-sso?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-sso) [![npm](https://img.shields.io/npm/dt/@svelte-dev/auth-sso?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-sso)                   |                                              | [Changelog](packages/auth-sso/CHANGELOG.md)    |
 
-[Online Demo](https://svelte.js.cool) is under [apps/web](apps/web/).
+[Webiste](https://svelte.js.cool) is under [apps/web](apps/web/).
 
 ## 赞助 Sponsor
 
