@@ -2,6 +2,7 @@
 /// <reference lib="dom.iterable" />
 
 import type { Auth } from '$lib/auth/auth.ts';
+import type { SessionStorage } from '@svelte-dev/session';
 
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces

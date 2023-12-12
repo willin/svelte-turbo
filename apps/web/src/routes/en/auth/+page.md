@@ -1,12 +1,13 @@
 ---
 title: '@svelte-dev/auth'
+desc: A simple and easy-to-use Svelte identity management library
 ---
 
+<script>
+  import { page } from "$app/stores"
+</script>
+
 ![Logo](https://repository-images.githubusercontent.com/726691357/f09bf6fc-3844-4584-8eee-6bfb425d8a38)
-
-[![github](https://img.shields.io/github/followers/willin.svg?style=social&label=Followers)](https://github.com/willin) [![npm](https://img.shields.io/npm/v/@svelte-dev/auth.svg)](https://npmjs.org/package/@svelte-dev/auth) [![npm](https://img.shields.io/npm/dm/@svelte-dev/auth.svg)](https://npmjs.org/package/@svelte-dev/auth) [![npm](https://img.shields.io/npm/dt/@svelte-dev/auth.svg)](https://npmjs.org/package/@svelte-dev/auth)
-
-Simple Authentication for [Svlelte](https://svelte.dev/).
 
 ## Features
 
@@ -25,6 +26,20 @@ Heavily inspired by [Passport.js](https://passportjs.org) and [Remix-Auth](https
 
 As with Passport.js, it uses the strategy pattern to support the different authentication flows. Each strategy is published individually as a separate npm package.
 
+## Demo
+
+{#if $page && $page.data.user}
+
+  <div class="w-full">
+    <pre>{JSON.stringify($page.data.user, null, 2)}</pre>
+  </div>
+{:else}
+  <!-- <a href="/auth/alipay">Alipay Login</a> -->
+  <!-- <a href="/auth/sso">SSO Login</a> | -->
+  <a class="btn btn-secondary m-auto !w-32 !max-w-32 !min-w-0 flex" href="/auth/github?redirect_uri=/en/auth">Github Login</a>
+
+{/if}
+
 ## Installation
 
 To use it, install it from npm (yarn or bun):
@@ -34,8 +49,6 @@ npm install @svelte-dev/auth @svelte-dev/session
 ```
 
 ## Usage
-
-API Specification: [Documentation](https://svelte-auth.js.cool/docs/)
 
 Here's an simple Example:
 
@@ -158,22 +171,20 @@ declare global {
 export {};
 ```
 
-## 赞助 Sponsor
+## TypeDocs
 
-维护者 Owner： [Willin Wang](https://willin.wang)
+[API Spec](/docs/auth/)
 
-如果您对本项目感兴趣，可以通过以下方式支持我：
+## Sponsor
 
-- 关注我的 Github 账号：[@willin](https://github.com/willin) [![github](https://img.shields.io/github/followers/willin.svg?style=social&label=Followers)](https://github.com/willin)
-- 参与 [爱发电](https://afdian.net/@willin) 计划
-- 支付宝或微信[扫码打赏](https://user-images.githubusercontent.com/1890238/89126156-0f3eeb80-d516-11ea-9046-5a3a5d59b86b.png)
+Owner： [Willin Wang](https://willin.wang)
 
 Donation ways:
 
-- Github: <https://github.com/sponsors/willin>
+- Follow me: [@willin](https://github.com/willin) [![github](https://img.shields.io/- Github: <https://github.com/sponsors/willin>
 - Paypal: <https://paypal.me/willinwang>
 - Alipay or Wechat Pay: [QRCode](https://user-images.githubusercontent.com/1890238/89126156-0f3eeb80-d516-11ea-9046-5a3a5d59b86b.png)
 
-## 许可证 License
+## License
 
 Apache-2.0

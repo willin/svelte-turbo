@@ -67,8 +67,8 @@ export const handle = handleAuth(
       // ssoStrategy,
       githubStrategy
     ],
-    successRedirect: '/demo',
-    failureRedirect: '/error'
+    successRedirect: '/auth',
+    failureRedirect: '/auth'
   },
   ({ event, resolve }) => {
     const url = new URL(event.request.url);

@@ -1,43 +1,57 @@
 ---
 title: '@svelte-dev/auth'
+desc: 一个简单好用的 Svelte 身份管理库
 ---
+
+<script>
+  import { page } from "$app/stores"
+</script>
 
 ![Logo](https://repository-images.githubusercontent.com/726691357/f09bf6fc-3844-4584-8eee-6bfb425d8a38)
 
-[![github](https://img.shields.io/github/followers/willin.svg?style=social&label=Followers)](https://github.com/willin) [![npm](https://img.shields.io/npm/v/@svelte-dev/auth.svg)](https://npmjs.org/package/@svelte-dev/auth) [![npm](https://img.shields.io/npm/dm/@svelte-dev/auth.svg)](https://npmjs.org/package/@svelte-dev/auth) [![npm](https://img.shields.io/npm/dt/@svelte-dev/auth.svg)](https://npmjs.org/package/@svelte-dev/auth)
+## 特性
 
-Simple Authentication for [Svlelte](https://svelte.dev/).
+- 完全的**服务器端**身份验证
+- 完整的**TypeScript**支持
+- **策略**-基础身份验证
+- 轻松处理**成功和失败**
+- 实现**自定义**策略
+- 支持持久**会话**
 
-## Features
+## 概述
 
-- Full **Server-Side** Authentication
-- Complete **TypeScript** Support
-- **Strategy**-based Authentication
-- Easily handle **success and failure**
-- Implement **custom** strategies
-- Supports persistent **sessions**
+Svelte Auth是一个完整的开源身份验证解决方案，适用于Svelte应用程序。
 
-## Overview
+深受[Passport.js](https://passportjs.org)和[Remix-Auth](https://github.com/sergiodxa/remix-auth)的启发，但完全从头开始重写，以便在[Web Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)之上工作。 Svelte Auth可以在最小的设置下添加到任何基于Svelte的应用程序中。
 
-Svelte Auth is a complete open-source authentication solution for Svelte applications.
+与Passport.js一样，它使用策略模式来支持不同的身份验证流程。 每个策略都作为单独的npm包单独发布。
 
-Heavily inspired by [Passport.js](https://passportjs.org) and [Remix-Auth](https://github.com/sergiodxa/remix-auth), but completely rewrote it from scratch to work on top of the [Web Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). Svelte Auth can be dropped in to any Svelte-based application with minimal setup.
+## 演示
 
-As with Passport.js, it uses the strategy pattern to support the different authentication flows. Each strategy is published individually as a separate npm package.
+{#if $page && $page.data.user}
 
-## Installation
+  <div class="w-full">
+    <pre>{JSON.stringify($page.data.user, null, 2)}</pre>
+  </div>
+{:else}
+  <!-- <a href="/auth/alipay">Alipay Login</a> -->
+  <!-- <a href="/auth/sso">SSO Login</a> | -->
+  <a class="btn btn-secondary m-auto !w-32 !max-w-32 !min-w-0 flex" href="/auth/github">Github 登录</a>
+{/if}
 
-To use it, install it from npm (yarn or bun):
+## 安装
+
+要使用它，从npm（yarn或bun）安装：
 
 ```bash
 npm install @svelte-dev/auth @svelte-dev/session
 ```
 
-## Usage
+## 使用
 
-API Specification: [Documentation](https://svelte-auth.js.cool/docs/)
+API规范：[文档](https://svelte-auth.js.cool/docs/)
 
-Here's an simple Example:
+这是一个简单的例子：
 
 ```ts
 // hooks.server.ts
@@ -86,11 +100,11 @@ export const handle = handleAuth({
 });
 ```
 
-That's it.
+就是这样。
 
-## Advanced Usage
+## 高级使用
 
-If you did not set `authRouting`. You need to add a login handler `src/routes/auth/[provider]/+server.ts`:
+如果您没有设置`authRouting`。 您需要添加一个登录处理程序`src/routes/auth/[provider]/+server.ts`：
 
 ```ts
 import { redirect, type RequestEvent } from '@sveltejs/kit';
@@ -105,7 +119,7 @@ export const GET = async (event: RequestEvent) => {
 };
 ```
 
-Then, add a callback handler `src/routes/auth/[provider]/callback/+server.ts.ts`:
+然后，添加一个回调处理程序`src/routes/auth/[provider]/callback/+server.ts.ts`：
 
 ```ts
 // same as before...
@@ -123,7 +137,7 @@ export const GET = async (event: RequestEvent) => {
 
 ### Typescript
 
-Modify `app.d.ts`, here is an example:
+修改`app.d.ts`，这是一个例子：
 
 ```ts
 // See https://kit.svelte.dev/docs/types#app
@@ -158,9 +172,13 @@ declare global {
 export {};
 ```
 
-## 赞助 Sponsor
+## TypeDocs
 
-维护者 Owner： [Willin Wang](https://willin.wang)
+[自动化生成的接口文档](/docs/auth/)
+
+## 赞助
+
+维护者： [Willin Wang](https://willin.wang)
 
 如果您对本项目感兴趣，可以通过以下方式支持我：
 
@@ -168,12 +186,6 @@ export {};
 - 参与 [爱发电](https://afdian.net/@willin) 计划
 - 支付宝或微信[扫码打赏](https://user-images.githubusercontent.com/1890238/89126156-0f3eeb80-d516-11ea-9046-5a3a5d59b86b.png)
 
-Donation ways:
-
-- Github: <https://github.com/sponsors/willin>
-- Paypal: <https://paypal.me/willinwang>
-- Alipay or Wechat Pay: [QRCode](https://user-images.githubusercontent.com/1890238/89126156-0f3eeb80-d516-11ea-9046-5a3a5d59b86b.png)
-
-## 许可证 License
+## License
 
 Apache-2.0
