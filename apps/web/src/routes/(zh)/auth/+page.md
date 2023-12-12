@@ -102,9 +102,11 @@ export const handle = handleAuth({
 
 就是这样。
 
-## 高级使用
+## 进阶使用
 
-如果您没有设置`authRouting`。 您需要添加一个登录处理程序`src/routes/auth/[provider]/+server.ts`：
+### 自定义路由
+
+如果您没有设置`authRouting`，您首先需要添加一个 `src/routes/auth/[provider]/+server.ts`:
 
 ```ts
 import { redirect, type RequestEvent } from '@sveltejs/kit';
@@ -119,10 +121,10 @@ export const GET = async (event: RequestEvent) => {
 };
 ```
 
-然后，添加一个回调处理程序`src/routes/auth/[provider]/callback/+server.ts.ts`：
+然后添加回调 `src/routes/auth/[provider]/callback/+server.ts.ts:`：
 
 ```ts
-// same as before...
+// 根据实际需要修改
 import type { RequestEvent } from '@sveltejs/kit';
 
 export const GET = async (event: RequestEvent) => {
@@ -171,6 +173,22 @@ declare global {
 
 export {};
 ```
+
+### 策略
+
+目前已经支持的策略有：
+
+| Package                                          | Meta                                                                                                                                                                                                                                                                                                                                                                                                                                         | Changelog                                      |
+| ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| [@svelte-dev/auth-oauth2](packages/auth-oauth2/) | [![npm](https://img.shields.io/npm/v/@svelte-dev/auth-oauth2?style=flat-square&logo=npm)](https://npmjs.org/package/@svelte-dev/auth-oauth2) [![npm](https://img.shields.io/npm/dm/@svelte-dev/auth-oauth2?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-oauth2) [![npm](https://img.shields.io/npm/dt/@svelte-dev/auth-oauth2?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-oauth2) | [Changelog](packages/auth-oauth2/CHANGELOG.md) |
+| [@svelte-dev/auth-github](packages/auth-github/) | [![npm](https://img.shields.io/npm/v/@svelte-dev/auth-github?style=flat-square&logo=npm)](https://npmjs.org/package/@svelte-dev/auth-github) [![npm](https://img.shields.io/npm/dm/@svelte-dev/auth-github?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-github) [![npm](https://img.shields.io/npm/dt/@svelte-dev/auth-github?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-github) | [Changelog](packages/auth-github/CHANGELOG.md) |
+| [@svelte-dev/auth-alipay](packages/auth-alipay/) | [![npm](https://img.shields.io/npm/v/@svelte-dev/auth-alipay?style=flat-square&logo=npm)](https://npmjs.org/package/@svelte-dev/auth-alipay) [![npm](https://img.shields.io/npm/dm/@svelte-dev/auth-alipay?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-alipay) [![npm](https://img.shields.io/npm/dt/@svelte-dev/auth-alipay?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-alipay) | [Changelog](packages/auth-alipay/CHANGELOG.md) |
+| [@svelte-dev/auth-afdian](packages/auth-afdian/) | [![npm](https://img.shields.io/npm/v/@svelte-dev/auth-afdian?style=flat-square&logo=npm)](https://npmjs.org/package/@svelte-dev/auth-afdian) [![npm](https://img.shields.io/npm/dm/@svelte-dev/auth-afdian?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-afdian) [![npm](https://img.shields.io/npm/dt/@svelte-dev/auth-afdian?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-afdian) | [Changelog](packages/auth-afdian/CHANGELOG.md) |
+| [@svelte-dev/auth-sso](packages/auth-sso/)       | [![npm](https://img.shields.io/npm/v/@svelte-dev/auth-sso?style=flat-square&logo=npm)](https://npmjs.org/package/@svelte-dev/auth-sso) [![npm](https://img.shields.io/npm/dm/@svelte-dev/auth-sso?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-sso) [![npm](https://img.shields.io/npm/dt/@svelte-dev/auth-sso?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-sso)                   | [Changelog](packages/auth-sso/CHANGELOG.md)    |
+
+注意： 不同的策略配置参数可能不尽相同。
+
+> 欢迎共享您的策略。
 
 ## TypeDocs
 
