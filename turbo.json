@@ -9,7 +9,10 @@
     },
     "@svelte-dev/session#build": {},
     "@svelte-dev/auth#build": {},
-    "@svelte-dev/auth-github#build": {},
+    "@svelte-dev/auth-oauth2#build": {},
+    "@svelte-dev/auth-github#build": {
+      "dependsOn": ["@svelte-dev/auth-oauth2#build"]
+    },
     "@svelte-dev/i18n#build": {},
     "web#build": {
       "dependsOn": [
