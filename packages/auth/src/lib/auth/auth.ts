@@ -90,19 +90,35 @@ export class Auth<User = unknown> {
     if (!inject || !event.url.pathname.startsWith('/auth')) {
       return;
     }
-    if ((event.locals as any).user) {
-      throw redirect(307, this.#options.successRedirect ?? '/');
-    }
     const params = event.url.pathname.split('/');
+    if (params.length !== 3 && params.length !== 4) {
+      // /auth
+      return;
+    }
+    if (![...this.#strategies.keys()].includes(params[2])) {
+      // /auth/invalid-provider
+      return;
+    }
+    if (params.length === 4 && params[3] !== 'callback') {
+      // /auth/provider/invalid-path
+      return;
+    }
+    const returnUrl = event.url?.searchParams?.get('redirect_uri');
+    if (returnUrl) {
+      await this.#session.flash('returnTo', returnUrl);
+    }
+    if ((event.locals as any).user) {
+      throw redirect(307, returnUrl || this.#options.successRedirect || '/');
+    }
     const idx = params.findIndex((x) => x === 'auth') + 1;
     const provider = idx > 0 && idx < params.length ? params[idx] : '';
     if (!provider) {
-      throw redirect(307, this.#options.failureRedirect ?? '/');
+      throw redirect(307, this.#options.failureRedirect || '/');
     }
 
     await this.authenticate(event, provider, {
-      successRedirect: this.#options.successRedirect ?? '/',
-      failureRedirect: this.#options.failureRedirect ?? '/'
+      successRedirect: this.#options.successRedirect || '/',
+      failureRedirect: this.#options.failureRedirect || '/'
     });
   }
 }

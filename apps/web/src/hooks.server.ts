@@ -2,8 +2,7 @@ import { env } from '$env/dynamic/private';
 import { fallbackLng } from '$lib/i8n';
 import { handleAuth } from '@svelte-dev/auth';
 import { GitHubStrategy } from '@svelte-dev/auth-github';
-import { locale } from '@svelte-dev/i18n';
-
+import { getLocales, locale } from '@svelte-dev/i18n';
 // import { SSOStrategy } from '@svelte-dev/auth-sso';
 // import { AlipayStrategy } from '@svelte-dev/auth-alipay';
 
@@ -68,12 +67,13 @@ export const handle = handleAuth(
       // ssoStrategy,
       githubStrategy
     ],
-    successRedirect: '/demo',
-    failureRedirect: '/error'
+    successRedirect: '/auth',
+    failureRedirect: '/auth'
   },
   ({ event, resolve }) => {
-    const lang = event.params.lang ?? fallbackLng;
-    event.locals.lang = lang;
+    const url = new URL(event.request.url);
+    const [, matched = ''] = url.pathname.split('/');
+    const lang = getLocales().includes(matched) ? matched : fallbackLng;
     locale.set(lang);
 
     return resolve(event, {

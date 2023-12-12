@@ -1,5 +1,5 @@
 import deepmerge from 'deepmerge';
-import { derived, writable } from 'svelte/store';
+import { derived, writable, type Readable } from 'svelte/store';
 import type { I18nDict } from './types.js';
 import { getPossibleLocales } from './locale.js';
 
@@ -72,7 +72,9 @@ export function addMessages(locale: string, ...partials: I18nDict[]) {
   });
 }
 
-const $locales = derived([$dictionary], ([dictionary]) => Object.keys(dictionary));
+const $locales: Readable<string[]> = derived([$dictionary], ([dictionary]) =>
+  Object.keys(dictionary)
+);
 
 $dictionary.subscribe((newDictionary) => (dictionary = newDictionary));
 

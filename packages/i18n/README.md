@@ -1,5 +1,9 @@
 # @svelte-dev/i18n
 
+[![github](https://img.shields.io/github/followers/willin.svg?style=social&label=Followers)](https://github.com/willin) [![npm](https://img.shields.io/npm/v/@svelte-dev/i18n.svg)](https://npmjs.org/package/@svelte-dev/i18n) [![npm](https://img.shields.io/npm/dm/@svelte-dev/i18n.svg)](https://npmjs.org/package/@svelte-dev/i18n) [![npm](https://img.shields.io/npm/dt/@svelte-dev/i18n.svg)](https://npmjs.org/package/@svelte-dev/i18n)
+
+[中文文档](https://svelte.js.cool/i18n) | [English Docs](https://svelte.js.cool/en/i18n)
+
 ## 赞助 Sponsor
 
 维护者 Owner： [Willin Wang](https://willin.wang)
