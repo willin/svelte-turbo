@@ -27,7 +27,7 @@
       <h1 class="mb-5 text-5xl font-bold text-secondary">Svelte Turbo</h1>
       <p class="mb-5">Make rockets for rookies.</p>
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <div class="card w-full bg-base-100 shadow-xl glass">
+        <div class="card w-full shadow-xl glass">
           <div class="card-body">
             <h2 class="card-title">@svelte-dev/session</h2>
             <p class="text-left">{$t('common.npm_downloads')}: {$downloadsSession}</p>
@@ -36,7 +36,7 @@
             </div>
           </div>
         </div>
-        <div class="join-item card w-full bg-base-100 shadow-xl glass">
+        <div class="card w-full shadow-xl glass">
           <div class="card-body">
             <h2 class="card-title">@svelte-dev/auth</h2>
             <p class="text-left">{$t('common.npm_downloads')}: {$downloadsAuth}</p>
@@ -45,7 +45,7 @@
             </div>
           </div>
         </div>
-        <div class="join-item card w-full bg-base-100 shadow-xl glass">
+        <div class="card w-full shadow-xl glass">
           <div class="card-body">
             <h2 class="card-title">@svelte-dev/i18n</h2>
             <p class="text-left">{$t('common.npm_downloads')}: {$downloadsI18n}</p>

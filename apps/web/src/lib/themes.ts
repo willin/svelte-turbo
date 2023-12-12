@@ -3,6 +3,14 @@ export const defaultLightTheme = 'retro';
 
 export const themes = [
   {
+    name: '👴  retro',
+    id: 'retro'
+  },
+  {
+    name: '🌇 Sunset',
+    id: 'sunset'
+  },
+  {
     name: '🌝  light',
     id: 'light'
   },
@@ -30,10 +38,7 @@ export const themes = [
     name: '🌃  synthwave',
     id: 'synthwave'
   },
-  {
-    name: '👴  retro',
-    id: 'retro'
-  },
+
   {
     name: '🤖  cyberpunk',
     id: 'cyberpunk'
@@ -125,10 +130,6 @@ export const themes = [
   {
     name: '🤓 Nord',
     id: 'nord'
-  },
-  {
-    name: '🌇 Sunset',
-    id: 'sunset'
   }
 ] as const;
 

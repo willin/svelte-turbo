@@ -32,7 +32,7 @@
   </div>
   <div
     tabindex="0"
-    class="dropdown-content bg-base-200 text-base-content rounded-t-box rounded-b-box top-px mt-16 w-48 overflow-y-auto shadow-2xl">
+    class="dropdown-content bg-neutral text-neutral-content rounded-t-box rounded-b-box top-px mt-14 w-48 overflow-y-auto shadow-2xl">
     <ul class="menu menu-compact gap-1 p-3">
       {#each $locales as langItem}
         {#if $t('__name', {}, langItem) !== '__name'}

@@ -15,7 +15,7 @@
 </script>
 
 <div
-  class="hero min-h-screen bg-base-200"
+  class="hero min-h-screen bg-neutral"
   style="background-image: url(https://willin.wang/images/bg.jpg);">
   <div class="hero-overlay bg-opacity-60"></div>
   <div class="hero-content text-center">

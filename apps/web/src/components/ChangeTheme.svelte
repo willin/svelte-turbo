@@ -33,16 +33,16 @@
   </div>
   <div
     tabindex="0"
-    class="dropdown-content bg-base-200 text-base-content rounded-t-box rounded-b-box top-px max-h-96 h-[70vh] w-60 overflow-y-auto shadow-2xl mt-16">
+    class="dropdown-content bg-neutral text-neutral-content rounded-t-box rounded-b-box top-px mt-14 w-60 h-[70vh] overflow-y-auto shadow-2xl">
     <div class="grid grid-cols-1 gap-3 p-3">
       {#each themes as theme}
         <button
-          class="outline-base-content overflow-hidden rounded-lg outline-2 outline-offset-2 hover:outline"
+          class="outline-neutral-content overflow-hidden rounded-lg outline-2 outline-offset-2 hover:outline"
           data-set-theme={theme.id}
           data-act-class="[&_svg]:visible">
           <div
             data-theme={theme.id}
-            class="bg-base-100 text-base-content w-full cursor-pointer font-sans">
+            class="bg-neutral text-neutral-content w-full cursor-pointer font-sans">
             <div class="grid grid-cols-5 grid-rows-3">
               <div class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4">
                 <svg
