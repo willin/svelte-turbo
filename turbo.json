@@ -7,11 +7,17 @@
       "cache": true,
       "outputs": [".svelte-kit/**", "dist/**"]
     },
-    "@svelte-dev/auth#build": {},
     "@svelte-dev/session#build": {},
+    "@svelte-dev/auth#build": {},
+    "@svelte-dev/auth-github#build": {},
     "@svelte-dev/i18n#build": {},
     "web#build": {
-      "dependsOn": ["@svelte-dev/auth#build", "@svelte-dev/session#build", "@svelte-dev/i18n#build"]
+      "dependsOn": [
+        "@svelte-dev/auth#build",
+        "@svelte-dev/session#build",
+        "@svelte-dev/i18n#build",
+        "@svelte-dev/auth-github#build"
+      ]
     },
     "web#dev": {
       "dependsOn": ["@svelte-dev/auth#build", "@svelte-dev/session#build", "@svelte-dev/i18n#build"]
