@@ -90,10 +90,22 @@ export class Auth<User = unknown> {
     if (!inject || !event.url.pathname.startsWith('/auth')) {
       return;
     }
+    const params = event.url.pathname.split('/');
+    if (params.length !== 3 || params.length !== 4) {
+      // /auth
+      return;
+    }
+    if (!this.#strategies.keys().includes(params[2])) {
+      // /auth/invalid-provider
+      return;
+    }
+    if (params.length === 4 && params[3] !== 'callback') {
+      // /auth/provider/invalid-path
+      return;
+    }
     if ((event.locals as any).user) {
       throw redirect(307, this.#options.successRedirect ?? '/');
     }
-    const params = event.url.pathname.split('/');
     const idx = params.findIndex((x) => x === 'auth') + 1;
     const provider = idx > 0 && idx < params.length ? params[idx] : '';
     if (!provider) {

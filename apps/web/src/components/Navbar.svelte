@@ -1,13 +1,6 @@
 <script>
-  import { page } from '$app/stores';
-  import { fallbackLng } from '$lib/i8n';
-  import { getRealPath } from '$lib/utils';
-  import { locale, locales } from '@svelte-dev/i18n';
+  import { linkPrefix } from '$lib/stores/prefix';
   import ChangeRepo from './ChangeRepo.svelte';
-
-  const pathname = $derived(
-    `${$locale === fallbackLng ? '' : `/${$locale}`}${getRealPath($page.url.pathname, $locales)}`
-  );
 </script>
 
 <div class="navbar bg-neutral text-neutral-content">
@@ -30,7 +23,7 @@
         tabindex="0"
         className="menu dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52" />
     </div>
-    <a href={pathname} class="btn btn-ghost text-xl">Svelte</a>
+    <a href={`${$linkPrefix || '/'}`} class="btn btn-ghost text-xl">Svelte</a>
     <ChangeRepo />
   </div>
 

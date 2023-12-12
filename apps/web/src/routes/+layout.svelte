@@ -1,14 +1,8 @@
 <script>
   import '../app.css';
-  import { locale, t } from '@svelte-dev/i18n';
+  import { t } from '@svelte-dev/i18n';
   import Navbar from '$components/Navbar.svelte';
   import { onNavigate } from '$app/navigation';
-  import { navigating } from '$app/stores';
-  import { fallbackLng } from '$lib/i8n';
-
-  navigating.subscribe((params) => {
-    if (params?.to) locale.set(params.to?.params?.lang ?? fallbackLng);
-  });
 
   onNavigate((navigation) => {
     // @ts-ignore

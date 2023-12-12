@@ -1,6 +1,7 @@
 <script lang="ts">
   // @ts-nocheck
   import { page } from '$app/stores';
+  import { linkPrefix } from '$lib/stores/prefix';
 
   const { className, ...rest } = $props<{ className?: string; tabindex?: string }>();
 </script>
@@ -8,11 +9,15 @@
 <ul
   class={`${className ?? 'animate-menu hidden lg:inline-flex menu menu-horizontal round'}`}
   {...rest}>
-  <li aria-current={$page.url.pathname === '/' ? 'repo' : undefined}><a href="/">Item 1</a></li>
-  <li aria-current={$page.url.pathname === '/en/' ? 'repo' : undefined}>
-    <a href="/en">Item 2</a>
+  <li aria-current={$page.url.pathname.includes('/session') ? 'repo' : undefined}>
+    <a href={`${$linkPrefix}/session`}>Session</a>
   </li>
-  <li><a href="/session">Item 3</a></li>
+  <li aria-current={$page.url.pathname.includes('/auth') ? 'repo' : undefined}>
+    <a href={`${$linkPrefix}/auth`}>Auth</a>
+  </li>
+  <li aria-current={$page.url.pathname.includes('/i18n') ? 'repo' : undefined}>
+    <a href={`${$linkPrefix}/i18n`}>I18n</a>
+  </li>
 </ul>
 
 <style>
