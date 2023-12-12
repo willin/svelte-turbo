@@ -29,3 +29,10 @@
     <p>Copyright © 2023 - <a href="https://willin.wang">Willin Wang</a> All right reserved</p>
   </aside>
 </footer>
+
+{#if true}
+  <script
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5059418763237956"
+    crossorigin="anonymous"></script>
+{/if}

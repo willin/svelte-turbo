@@ -1,6 +1,7 @@
 <script>
   import { createTableOfContents } from '@melt-ui/svelte';
   import Toc from './toc.svelte';
+  import AdSlot from './AdSlot.svelte';
 
   const { title, desc } = $props();
 
@@ -20,7 +21,7 @@
   <div class="hero-content text-center">
     <div class="max-w-full">
       {#if title}
-        <h1 class="text-5xl font-bold glass rounded-lg p-4">
+        <h1 class="text:2xl lg:text-5xl font-bold glass rounded-lg p-4">
           {@html title}
         </h1>
       {/if}
@@ -34,7 +35,8 @@
 <div class="grid grid-cols-3">
   <article
     id="article"
-    class="col-span-3 lg:col-span-2 prose prose-sm md:prose-base w-full !max-w-full p-10">
+    class="col-span-3 lg:col-span-2 prose prose-sm md:prose-base w-full !max-w-full p-2 lg:p-10">
+    <AdSlot />
     <slot />
     <!-- <ComponentFooter pages={data?.pages} />
     <div class="not-prose flex justify-center xl:hidden">
