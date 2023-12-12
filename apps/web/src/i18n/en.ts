@@ -9,5 +9,9 @@ export const dict: I18nDict = {
   __status: 'beta',
   site: {
     title: 'Hello World'
+  },
+  common: {
+    get_started: 'Get Started',
+    npm_downloads: 'NPM Downloads'
   }
 };

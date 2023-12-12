@@ -9,5 +9,9 @@ export const dict: I18nDict = {
   __status: '',
   site: {
     title: '你好，世界'
+  },
+  common: {
+    get_started: '开始使用',
+    npm_downloads: 'NPM 下载量'
   }
 };

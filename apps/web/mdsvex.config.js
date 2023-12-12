@@ -28,10 +28,7 @@ async function highlighter(code, lang = '') {
   const html = await codeToHtml(code, {
     lang,
 
-    themes: {
-      dark: import('shikiji/themes/nord.mjs'),
-      light: import('shikiji/themes/github-light.mjs')
-    }
+    theme: 'nord'
   });
 
   return escape_svelty(html);

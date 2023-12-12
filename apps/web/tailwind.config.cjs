@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
-  content: ['./src/**/*.{html,svelte,js,ts,md}'],
+  content: [
+    //
+    './src/**/*.{html,svelte,js,ts,md,svx,svelte.md}'
+  ],
   theme: {
     extend: {
       backgroundImage: {
