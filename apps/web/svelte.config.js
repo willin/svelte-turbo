@@ -13,6 +13,9 @@ const config = {
     runes: true
   },
   kit: {
+    alias: {
+      $components: './src/components'
+    },
     // adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
     // If your environment is not supported or you settled on a specific environment, switch out the adapter.
     // See https://kit.svelte.dev/docs/adapters for more information about adapters.
@@ -22,6 +25,12 @@ const config = {
         exclude: ['<build>', '<prerendered>', '/favicon.png', '/ads.txt', '/images', '/docs/*']
       }
     })
+  },
+  onwarn: (warning, handler) => {
+    if (warning.code.startsWith('a11y-no-noninteractive-tabindex')) {
+      return;
+    }
+    handler(warning);
   }
 };
 

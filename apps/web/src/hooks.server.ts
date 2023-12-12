@@ -3,7 +3,6 @@ import { fallbackLng } from '$lib/i8n';
 import { handleAuth } from '@svelte-dev/auth';
 import { GitHubStrategy } from '@svelte-dev/auth-github';
 import { locale } from '@svelte-dev/i18n';
-
 // import { SSOStrategy } from '@svelte-dev/auth-sso';
 // import { AlipayStrategy } from '@svelte-dev/auth-alipay';
 

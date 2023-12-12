@@ -1,7 +1,10 @@
 <script>
   import '../../app.css';
   import { t } from '@svelte-dev/i18n';
+  import Navbar from '$components/Navbar.svelte';
 </script>
+
+<Navbar />
 
 <main>
   <h1>@svelte-dev/auth &amp; @svelte-dev/session</h1>
@@ -18,19 +21,3 @@
     <slot />
   </article>
 </main>
-
-<style>
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-  }
-  a,
-  a:link,
-  a:visited {
-    text-decoration: none;
-    color: #69f;
-  }
-</style>
