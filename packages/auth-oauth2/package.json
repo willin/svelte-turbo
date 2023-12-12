@@ -1,6 +1,6 @@
 {
   "name": "@svelte-dev/auth-oauth2",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A OAuth2Strategy for @svelte-dev/auth",
   "author": "Willin Wang <willin@willin.org> (https://willin.wang/)",
   "keywords": [
