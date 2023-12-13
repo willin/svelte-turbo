@@ -1,7 +1,7 @@
 /// <reference lib="dom" />
 /// <reference lib="dom.iterable" />
 
-import type { Auth } from '$lib/auth/auth.ts';
+import type { Auth } from '@svelte-dev/auth';
 import type { SessionStorage } from '@svelte-dev/session';
 
 // See https://kit.svelte.dev/docs/types#app
@@ -11,7 +11,7 @@ declare global {
     // interface Error {}
     interface Locals {
       lang: string;
-      auth: Auth;
+      auth: Auth<unknown>;
       session: SessionStorage<{ user: any }>;
       user?:
         | {

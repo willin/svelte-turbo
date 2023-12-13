@@ -4,7 +4,7 @@ desc: A simple and easy-to-use Svelte identity management library
 ---
 
 <script>
-  import { page } from "$app/stores"
+  import { page } from "$app/stores";
 </script>
 
 ![Logo](https://repository-images.githubusercontent.com/726691357/f09bf6fc-3844-4584-8eee-6bfb425d8a38)
@@ -29,6 +29,7 @@ As with Passport.js, it uses the strategy pattern to support the different authe
 ## Demo
 
 {#if $page && $page.data.user}
+<a class="btn btn-secondary m-auto !w-32 !max-w-32 !min-w-0 flex" href="/logout?redirectTo=/en">Logout</a>
 
   <div class="w-full">
     <pre>{JSON.stringify($page.data.user, null, 2)}</pre>
@@ -175,8 +176,8 @@ export {};
 
 ### Strategies
 
-| Package                                          | Meta                                                                                                                                                                                                                                                                                                                                                                                                                                         | Changelog                                      |
-| ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| Package                                                                                           | Meta                                                                                                                                                                                                                                                                                                                                                                                                                                         | Changelog                                                                                       |
+| ------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | [@svelte-dev/auth-oauth2](https://github.com/willin/svelte-turbo/tree/main/packages/auth-oauth2/) | [![npm](https://img.shields.io/npm/v/@svelte-dev/auth-oauth2?style=flat-square&logo=npm)](https://npmjs.org/package/@svelte-dev/auth-oauth2) [![npm](https://img.shields.io/npm/dm/@svelte-dev/auth-oauth2?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-oauth2) [![npm](https://img.shields.io/npm/dt/@svelte-dev/auth-oauth2?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-oauth2) | [Changelog](https://github.com/willin/svelte-turbo/tree/main/packages/auth-oauth2/CHANGELOG.md) |
 | [@svelte-dev/auth-github](https://github.com/willin/svelte-turbo/tree/main/packages/auth-github/) | [![npm](https://img.shields.io/npm/v/@svelte-dev/auth-github?style=flat-square&logo=npm)](https://npmjs.org/package/@svelte-dev/auth-github) [![npm](https://img.shields.io/npm/dm/@svelte-dev/auth-github?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-github) [![npm](https://img.shields.io/npm/dt/@svelte-dev/auth-github?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-github) | [Changelog](https://github.com/willin/svelte-turbo/tree/main/packages/auth-github/CHANGELOG.md) |
 | [@svelte-dev/auth-alipay](https://github.com/willin/svelte-turbo/tree/main/packages/auth-alipay/) | [![npm](https://img.shields.io/npm/v/@svelte-dev/auth-alipay?style=flat-square&logo=npm)](https://npmjs.org/package/@svelte-dev/auth-alipay) [![npm](https://img.shields.io/npm/dm/@svelte-dev/auth-alipay?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-alipay) [![npm](https://img.shields.io/npm/dt/@svelte-dev/auth-alipay?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-alipay) | [Changelog](https://github.com/willin/svelte-turbo/tree/main/packages/auth-alipay/CHANGELOG.md) |

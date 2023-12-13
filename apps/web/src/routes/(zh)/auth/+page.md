@@ -4,7 +4,7 @@ desc: 一个简单好用的 Svelte 身份管理库
 ---
 
 <script>
-  import { page } from "$app/stores"
+  import { page } from "$app/stores";
 </script>
 
 ![Logo](https://repository-images.githubusercontent.com/726691357/f09bf6fc-3844-4584-8eee-6bfb425d8a38)
@@ -29,6 +29,7 @@ Svelte Auth是一个完整的开源身份验证解决方案，适用于Svelte应
 ## 演示
 
 {#if $page && $page.data.user}
+<a class="btn btn-secondary m-auto !w-32 !max-w-32 !min-w-0 flex" data-sveltekit-preload-data="tap" href="/logout">注销登录</a>
 
   <div class="w-full">
     <pre>{JSON.stringify($page.data.user, null, 2)}</pre>
@@ -176,8 +177,8 @@ export {};
 
 目前已经支持的策略有：
 
-| Package                                          | Meta                                                                                                                                                                                                                                                                                                                                                                                                                                         | Changelog                                      |
-| ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| Package                                                                                           | Meta                                                                                                                                                                                                                                                                                                                                                                                                                                         | Changelog                                                                                       |
+| ------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | [@svelte-dev/auth-oauth2](https://github.com/willin/svelte-turbo/tree/main/packages/auth-oauth2/) | [![npm](https://img.shields.io/npm/v/@svelte-dev/auth-oauth2?style=flat-square&logo=npm)](https://npmjs.org/package/@svelte-dev/auth-oauth2) [![npm](https://img.shields.io/npm/dm/@svelte-dev/auth-oauth2?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-oauth2) [![npm](https://img.shields.io/npm/dt/@svelte-dev/auth-oauth2?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-oauth2) | [Changelog](https://github.com/willin/svelte-turbo/tree/main/packages/auth-oauth2/CHANGELOG.md) |
 | [@svelte-dev/auth-github](https://github.com/willin/svelte-turbo/tree/main/packages/auth-github/) | [![npm](https://img.shields.io/npm/v/@svelte-dev/auth-github?style=flat-square&logo=npm)](https://npmjs.org/package/@svelte-dev/auth-github) [![npm](https://img.shields.io/npm/dm/@svelte-dev/auth-github?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-github) [![npm](https://img.shields.io/npm/dt/@svelte-dev/auth-github?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-github) | [Changelog](https://github.com/willin/svelte-turbo/tree/main/packages/auth-github/CHANGELOG.md) |
 | [@svelte-dev/auth-alipay](https://github.com/willin/svelte-turbo/tree/main/packages/auth-alipay/) | [![npm](https://img.shields.io/npm/v/@svelte-dev/auth-alipay?style=flat-square&logo=npm)](https://npmjs.org/package/@svelte-dev/auth-alipay) [![npm](https://img.shields.io/npm/dm/@svelte-dev/auth-alipay?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-alipay) [![npm](https://img.shields.io/npm/dt/@svelte-dev/auth-alipay?style=flat-square&label=down)](https://npmjs.org/package/@svelte-dev/auth-alipay) | [Changelog](https://github.com/willin/svelte-turbo/tree/main/packages/auth-alipay/CHANGELOG.md) |

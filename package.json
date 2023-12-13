@@ -20,7 +20,7 @@
     "lint-staged": "latest",
     "prettier": "^3.1.0",
     "prettier-plugin-svelte": "^3.1.2",
-    "turbo": "latest"
+    "turbo": "^1.11.2"
   },
   "engines": {
     "node": ">=18"

@@ -106,7 +106,13 @@ export class CookieStrategy<Data = SessionData, FlashData = Data>
    * Deletes data for a given session id from the data store.
    */
   async deleteData(id: string): Promise<void> {
-    this.#cookies.delete(id, this.#options);
+    if (!this.#chunk) {
+      return this.#cookies.delete(id, this.#options);
+    }
+    const allCookies = this.#cookies.getAll().filter((cookie) => cookie.name.startsWith(id));
+    for (const cookie of allCookies) {
+      this.#cookies.delete(cookie.name, this.#options);
+    }
   }
 
   #chunkString(str: string, chunkSize: number) {
