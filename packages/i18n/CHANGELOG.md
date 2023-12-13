@@ -1,5 +1,11 @@
 # @svelte-dev/i18n
 
+## 1.0.1
+
+### Patch Changes
+
+- [`eaf936e`](https://github.com/willin/svelte-turbo/commit/eaf936e7758d33e54898da0e1121846e3f2d6e3a) Thanks [@willin](https://github.com/willin)! - fix session delete
+
 ## 1.0.0
 
 ### Major Changes
