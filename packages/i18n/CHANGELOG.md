@@ -1,5 +1,11 @@
 # @svelte-dev/i18n
 
+## 1.0.0
+
+### Major Changes
+
+- [`7fc4357`](https://github.com/willin/svelte-turbo/commit/7fc4357398b11cc2222438fb617d2aa393f29995) Thanks [@willin](https://github.com/willin)! - first major version
+
 ## 0.0.2
 
 ### Patch Changes
