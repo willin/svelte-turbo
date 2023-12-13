@@ -149,7 +149,7 @@ export const handle = handleSession({
 
 ```ts
 export const handle = handleSession({
-		adapter: {
+	adapter: {
 		name: 'cookie',
 		options: {
 			chunk: true
