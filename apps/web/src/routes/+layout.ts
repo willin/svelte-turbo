@@ -1,1 +1,1 @@
-import '$lib/i8n';
+import '$lib/i18n';

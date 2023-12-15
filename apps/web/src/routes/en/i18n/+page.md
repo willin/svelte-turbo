@@ -83,7 +83,7 @@ export const match: ParamMatcher = (param) => {
 Import i18n from `+layout.ts`：
 
 ```ts
-import '$lib/i8n':
+import '$lib/i18n':
 ```
 
 Use in page:
@@ -98,7 +98,7 @@ Use in page:
 
 ## TypeDocs
 
-[API Spec](/docs/i8n/)
+[API Spec](/docs/i18n/)
 
 ## Sponsor
 

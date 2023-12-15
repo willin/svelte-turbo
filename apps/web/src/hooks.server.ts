@@ -1,5 +1,5 @@
 import { env } from '$env/dynamic/private';
-import { fallbackLng } from '$lib/i8n';
+import { fallbackLng } from '$lib/i18n';
 import { handleAuth } from '@svelte-dev/auth';
 import { GitHubStrategy } from '@svelte-dev/auth-github';
 import { getLocales, locale } from '@svelte-dev/i18n';

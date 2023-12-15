@@ -5,34 +5,20 @@ import remarkGfm from 'remark-gfm';
 import remarkGithub from 'remark-github';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import { codeToHtml } from 'shikiji';
+import rehypePrettyCode from 'rehype-pretty-code';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-/**
- * @param {string} code
- * @param {string | undefined} lang
- */
-async function highlighter(code, lang = '') {
-  /**
-   * escape curlies, backtick, \t, \r, \n to avoid breaking output of {@html `here`} in .svelte
-   * @param {string} str the string to escape
-   * @returns the escaped string
-   */
-  const escape_svelty = (str) =>
-    str
-      .replace(/[{}`]/g, (c) => ({ '`': '&#96;', '{': '&#123;', '}': '&#125;' })[c])
-      .replace(/\\([trn])/g, '&#92;$1');
+// const escape_svelty = (str) =>
+//     str
+//       .replace(/[{}`]/g, (c) => ({ '`': '&#96;', '{': '&#123;', '}': '&#125;' })[c])
+//       .replace(/\\([trn])/g, '&#92;$1');
 
-  const html = await codeToHtml(code, {
-    lang,
-
-    theme: 'nord'
-  });
-
-  return escape_svelty(html);
-}
+/** @type {import('rehype-pretty-code').Options} */
+const rehypePrettyCodeOptions = {
+  theme: 'one-dark-pro'
+};
 
 const config = defineConfig({
   extensions: ['.svelte.md', '.md', '.svx'],
@@ -42,11 +28,10 @@ const config = defineConfig({
     // _: './path/to/fallback/layout.svelte'
     _: path.resolve(__dirname, './src/components/mdsvex.svelte')
   },
-  highlight: {
-    highlighter
-  },
+  highlight: false,
   rehypePlugins: [
     rehypeSlug,
+    [rehypePrettyCode, rehypePrettyCodeOptions],
     [
       rehypeAutolinkHeadings,
       {

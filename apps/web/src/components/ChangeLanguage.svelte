@@ -1,7 +1,7 @@
 <script>
   import { locales, locale, t } from '@svelte-dev/i18n';
   import { page } from '$app/stores';
-  import { fallbackLng } from '$lib/i8n';
+  import { fallbackLng } from '$lib/i18n';
   import { getRealPath } from '$lib/utils';
 
   const pathname = $derived(getRealPath($page.url.pathname, $locales));

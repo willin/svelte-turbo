@@ -7,6 +7,11 @@ desc: 一个简单好用的 Svelte 身份管理库
   import { page } from "$app/stores";
 </script>
 
+```js title="hello.js" /age/#v /name/#v /setAge/#s /setName/#s /50/#i /'Taylor'/#i
+const [age, setAge] = useState(50);
+const [name, setName] = useState('Taylor');
+```
+
 ![Logo](https://repository-images.githubusercontent.com/726691357/f09bf6fc-3844-4584-8eee-6bfb425d8a38)
 
 ## 特性

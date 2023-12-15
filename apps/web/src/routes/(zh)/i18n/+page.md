@@ -83,7 +83,7 @@ export const match: ParamMatcher = (param) => {
 配置 `+layout.ts`：
 
 ```ts
-import '$lib/i8n';
+import '$lib/i18n';
 ```
 
 在页面中使用：

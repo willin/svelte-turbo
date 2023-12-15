@@ -2,7 +2,7 @@
   import { downloadsAuth, downloadsI18n, downloadsSession } from '$lib/stores/npm';
   import { t } from '@svelte-dev/i18n';
   import { getPossibleLocales, locales } from '@svelte-dev/i18n';
-  import { fallbackLng } from '$lib/i8n';
+  import { fallbackLng } from '$lib/i18n';
   import { page } from '$app/stores';
   import SEO from '$components/SEO.svelte';
   import { goto } from '$app/navigation';

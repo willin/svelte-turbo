@@ -1,5 +1,5 @@
 import { page } from '$app/stores';
-import { fallbackLng } from '$lib/i8n';
+import { fallbackLng } from '$lib/i18n';
 import { locales } from '@svelte-dev/i18n';
 import { derived } from 'svelte/store';
 
