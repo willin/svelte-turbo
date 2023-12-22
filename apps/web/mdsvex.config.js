@@ -5,33 +5,41 @@ import remarkGfm from 'remark-gfm';
 import remarkGithub from 'remark-github';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypePrettyCode from 'rehype-pretty-code';
+import { createHighlighter } from '@svelte-dev/pretty-code';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// const escape_svelty = (str) =>
-//     str
-//       .replace(/[{}`]/g, (c) => ({ '`': '&#96;', '{': '&#123;', '}': '&#125;' })[c])
-//       .replace(/\\([trn])/g, '&#92;$1');
-
-/** @type {import('rehype-pretty-code').Options} */
-const rehypePrettyCodeOptions = {
-  theme: 'one-dark-pro'
-};
-
 const config = defineConfig({
   extensions: ['.svelte.md', '.md', '.svx'],
   layout: {
-    // blog: './path/to/blog/layout.svelte',
-    // article: './path/to/article/layout.svelte',
-    // _: './path/to/fallback/layout.svelte'
-    _: path.resolve(__dirname, './src/components/mdsvex.svelte')
+    _: path.join(__dirname, './src/components/mdsvex.svelte')
   },
-  highlight: false,
+  highlight: {
+    highlighter: createHighlighter({
+      // keepBackground: false,
+      theme: 'github-dark',
+      onVisitLine(node) {
+        // Prevent lines from collapsing in `display: grid` mode, and allow empty
+        // lines to be copy/pasted
+        if (node.children.length === 0) {
+          node.children = [{ type: 'text', value: ' ' }];
+        }
+      },
+      onVisitHighlightedLine(node) {
+        if (node.properties.className) {
+          node.properties.className.push('line--highlighted');
+        } else {
+          node.properties.className = ['line--highlighted'];
+        }
+      },
+      onVisitHighlightedWord(node) {
+        node.properties.className = ['word--highlighted'];
+      }
+    })
+  },
   rehypePlugins: [
     rehypeSlug,
-    [rehypePrettyCode, rehypePrettyCodeOptions],
     [
       rehypeAutolinkHeadings,
       {
