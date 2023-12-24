@@ -34,7 +34,7 @@ Svelte Auth是一个完整的开源身份验证解决方案，适用于Svelte应
 ## 演示
 
 {#if $page && $page.data.user}
-<a class="btn btn-secondary m-auto !w-32 !max-w-32 !min-w-0 flex" data-sveltekit-preload-data="tap" href="/logout">注销登录</a>
+<a class="btn btn-secondary m-auto !w-32 !max-w-32 !min-w-0 flex" data-sveltekit-preload-data="tap" href="/logout?redirectTo=/auth">注销登录</a>
 
   <div class="w-full">
     <pre>{JSON.stringify($page.data.user, null, 2)}</pre>

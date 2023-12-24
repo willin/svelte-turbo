@@ -29,7 +29,7 @@ As with Passport.js, it uses the strategy pattern to support the different authe
 ## Demo
 
 {#if $page && $page.data.user}
-<a class="btn btn-secondary m-auto !w-32 !max-w-32 !min-w-0 flex" href="/logout?redirectTo=/en">Logout</a>
+<a class="btn btn-secondary m-auto !w-32 !max-w-32 !min-w-0 flex" href="/logout?redirectTo=/en/auth">Logout</a>
 
   <div class="w-full">
     <pre>{JSON.stringify($page.data.user, null, 2)}</pre>

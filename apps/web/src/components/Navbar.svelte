@@ -42,7 +42,7 @@
 
     <div class="navbar-end">
       <a
-        href="https://discord.gg/XpQfJs4J"
+        href="https://discord.gg/sRpfQ9VVZH"
         rel="noreferrer"
         target="_blank"
         class="btn btn-ghost gap-1 normal-case">
