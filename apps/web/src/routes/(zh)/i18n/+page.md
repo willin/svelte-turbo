@@ -96,9 +96,9 @@ import '$lib/i18n';
 {$t('message')}
 ```
 
-## TypeDocs
+## API 文档
 
-[自动化生成的接口文档](/docs/i18n/)
+[API 接口文档](https://paka.dev/npm/@svelte-dev/i18n/api)
 
 ## 赞助
 

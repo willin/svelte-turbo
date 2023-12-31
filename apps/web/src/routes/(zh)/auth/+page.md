@@ -7,11 +7,6 @@ desc: 一个简单好用的 Svelte 身份管理库
   import { page } from "$app/stores";
 </script>
 
-```js title="hello.js" /age/#v /name/#v /setAge/#s /setName/#s /50/#i /'Taylor'/#i
-const [age, setAge] = useState(50);
-const [name, setName] = useState('Taylor');
-```
-
 ![Logo](https://repository-images.githubusercontent.com/726691357/f09bf6fc-3844-4584-8eee-6bfb425d8a38)
 
 ## 特性
@@ -194,9 +189,14 @@ export {};
 
 > 欢迎共享您的策略。
 
-## TypeDocs
+## API 文档
 
-[自动化生成的接口文档](/docs/auth/)
+- [API 接口文档](https://paka.dev/npm/@svelte-dev/auth/api)
+- [OAuth2 API 接口文档](https://paka.dev/npm/@svelte-dev/auth-oauth2/api)
+- [Github API 接口文档](https://paka.dev/npm/@svelte-dev/auth-github/api)
+- [Alipay API 接口文档](https://paka.dev/npm/@svelte-dev/auth-alipay/api)
+- [Afdian API 接口文档](https://paka.dev/npm/@svelte-dev/auth-afdian/api)
+- [SSO API 接口文档](https://paka.dev/npm/@svelte-dev/auth-sso/api)
 
 ## 赞助
 

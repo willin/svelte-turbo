@@ -25,11 +25,6 @@
     "web#dev": {
       "dependsOn": ["@svelte-dev/auth#build", "@svelte-dev/session#build", "@svelte-dev/i18n#build"]
     },
-    "build:docs": {
-      "dependsOn": ["web#build"],
-      "cache": true,
-      "outputs": [".svelte-kit/cloudflare/docs/**"]
-    },
     "test": {
       "outputs": ["coverage/**"],
       "dependsOn": ["build"],

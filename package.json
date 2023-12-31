@@ -2,7 +2,6 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "build:docs": "turbo run build:docs",
     "dev": "turbo run dev --parallel",
     "test": "turbo run test --parallel",
     "changeset:version": "changeset version",

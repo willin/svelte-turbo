@@ -293,9 +293,9 @@ export class YourStrategy<Data = SessionData, FlashData = Data>
 }
 ```
 
-## TypeDocs
+## API 文档
 
-[自动化生成的接口文档](/docs/session/)
+[API 接口文档](https://paka.dev/npm/@svelte-dev/session/api)
 
 ## 赞助
 

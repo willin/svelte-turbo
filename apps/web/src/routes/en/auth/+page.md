@@ -186,9 +186,14 @@ export {};
 
 > Welcome to share your strategies here.
 
-## TypeDocs
+## API Spec
 
-[API Spec](/docs/auth/)
+- [API Spec](https://paka.dev/npm/@svelte-dev/auth/api)
+- [OAuth2 API Spec](https://paka.dev/npm/@svelte-dev/auth-oauth2/api)
+- [Github API Spec](https://paka.dev/npm/@svelte-dev/auth-github/api)
+- [Alipay API Spec](https://paka.dev/npm/@svelte-dev/auth-alipay/api)
+- [Afdian API Spec](https://paka.dev/npm/@svelte-dev/auth-afdian/api)
+- [SSO API Spec](https://paka.dev/npm/@svelte-dev/auth-sso/api)
 
 ## Sponsor
 

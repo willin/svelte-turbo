@@ -58,9 +58,9 @@ export class SSOStrategy<User> extends OAuth2Strategy<User, SSOProfile, SSOExtra
       callbackURL,
       userAgent,
       scope,
-      authorizationURL = 'https://sso.willin.wang/authorize',
-      tokenURL = 'https://sso.willin.wang/token',
-      userInfoURL = 'https://sso.willin.wang/userinfo'
+      authorizationURL = 'https://sso.willin.wang/auth/authorize',
+      tokenURL = 'https://sso.willin.wang/auth/token',
+      userInfoURL = 'https://sso.willin.wang/auth/userinfo'
     }: SSOStrategyOptions,
     verify: StrategyVerifyCallback<User, OAuth2StrategyVerifyParams<SSOProfile, SSOExtraParams>>
   ) {

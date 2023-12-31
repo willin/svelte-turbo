@@ -96,9 +96,9 @@ Use in page:
 {$t('message')}
 ```
 
-## TypeDocs
+## Api Spec
 
-[API Spec](/docs/i18n/)
+[API Spec](https://paka.dev/npm/@svelte-dev/i18n/api)
 
 ## Sponsor
 

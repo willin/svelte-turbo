@@ -296,9 +296,9 @@ export class YourStrategy<Data = SessionData, FlashData = Data>
 }
 ```
 
-## TypeDocs
+## API Spec
 
-[API Spec](/docs/session/)
+[API Spec](https://paka.dev/npm/@svelte-dev/session/api)
 
 ## Sponsor
 
