@@ -1,5 +1,11 @@
 # @svelte-dev/i18n
 
+## 1.0.2
+
+### Patch Changes
+
+- [`9397876`](https://github.com/willin/svelte-turbo/commit/9397876ee420a9db10c5c87698387611b01ec161) Thanks [@willin](https://github.com/willin)! - remove typedocs
+
 ## 1.0.1
 
 ### Patch Changes
