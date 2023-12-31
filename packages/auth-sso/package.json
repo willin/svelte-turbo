@@ -1,6 +1,6 @@
 {
   "name": "@svelte-dev/auth-sso",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SSO for Svelte Auth",
   "author": "Willin Wang <willin@willin.org> (https://willin.wang/)",
   "keywords": [
